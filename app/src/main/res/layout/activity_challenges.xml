@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChallengesActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:id="@+id/featherFinderLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <!-- android:src="@drawable/ff_logo"--> <!-- Replace with your logo drawable resource -->
+
+        <ImageView
+            android:id="@+id/trophyIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/challengesTitle"
+            android:src="@drawable/ic_trophy"
+            android:layout_marginTop="8dp"
+           /> <!-- Replace with your trophy drawable resource -->
+
+        <TextView
+            android:id="@+id/challengesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/featherFinderLogo"
+            android:layout_centerHorizontal="true"
+            android:text="Challenges"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="16dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/challengeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/challengesTitle"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_challenge"
+                android:layout_gravity="end" />
+
+            <TextView
+                android:id="@+id/challengeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beginner Challenge:\n\n\nAdd 2 Observations to receive the reward :)" />
+
+            <TextView
+                android:id="@+id/textViewChallengeStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Challenge Status: Not Active"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textViewObservationCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Observations: 0"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/activateChallengeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/challengeContainer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Activate Challenge" />
+
+        <TextView
+            android:id="@+id/yourBadgesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activateChallengeButton"
+            android:layout_centerHorizontal="true"
+            android:text="Your Badges:"
+            android:layout_marginTop="16dp" />
+        <ImageView
+            android:id="@+id/badgeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/yourBadgesTitle"
+            android:src="@drawable/ic_badge"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
